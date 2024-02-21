@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Open Mind| Postagem </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="shortcut icon" type="image/ico" href="/images/icoopenmind.ico"/>
+    <script src="/script.js"></script>
+</head>
+<body class="dark-mode">
+<header id="cabecalho">
+    <img alt="Logo OpenMind.jpg" src="/images/logoopenmind.JPG" height="80" width="300"/>
+</header>
+
+<main id="conteudo" class="login-form">
+    <form method="post" th:action="@{/nova_postagem}" th:object="${postagem}">
+        <h1>Poste sua mensagem:</h1>
+        <p>
+
+            <textarea class="form-control" rows="5" th:field="*{conteudo}" placeholder="Digite sua postagem aqui"></textarea>
+        </p>
+        <p>
+            <label>Autor:</label>
+            <select th:field="*{autor.id}">
+                <option th:each="usuario : ${usuarios}" th:value="${usuario.id}" th:text="${usuario.nome}"></option>
+            </select>
+        </p>
+        <button type="submit" class="btn btn-success">Postar</button>
+        <button type="button" class="btn btn-primary" onclick="window.location.href='/listar_postagem'">TimeLine</button>
+        <button type="button" class="btn btn-success" onclick="window.location.href='/login'">Sair</button>
+    </form>
+</main>
+</body>
+</html>

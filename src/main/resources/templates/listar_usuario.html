@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Open Mind| Timeline </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="shortcut icon" type="image/ico" href="/images/icoopenmind.ico"/>
+    <script src="/script.js"></script>
+</head>
+<body class="dark-mode">
+<header id="cabecalho">
+    <img alt="Logo OpenMind.jpg" src="/images/logoopenmind.JPG" height="80" width="300"/>
+</header>
+
+<main id="conteudo" class="login-form">
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <table class="table">
+                    <thead>
+
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>TimeLine</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="usuario : ${usuarios}">
+                        <td th:text="${usuario.id}"></td>
+                        <td th:text="${usuario.nome}"></td>
+                        <td th:text="${usuario.email}"></td>
+                        <td>
+                            <a th:href="@{/listar_por_autor/{autorId}(autorId=${usuario.id})}" class="btn btn-info">Ver Postagens</a>
+                        </td>
+                    </tr>
+                    </tbody>
+
+                </table>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/nova_postagem'">Nova Postagem</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='/login'">Sair</button>
+
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
+html>

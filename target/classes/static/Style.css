@@ -1,0 +1,62 @@
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    text-align-all: center;
+}
+
+body.dark-mode {
+    background-color: #d9ebe8; /* Cor de fundo escura */
+    color: #41281f; /* Cor do texto clara */
+}
+#conteudo.login-form {
+    background-color: rgb(217, 235, 232); /* Fundo branco semi-transparente para a Ã¡rea de login */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgb(65, 40, 31); /* Sombra leve */
+}
+
+#cabecalho {
+
+    display: flow;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 2px solid #41281f;
+    margin-top: 0px; /* Ajuste o espaÃ§amento superior conforme necessÃ¡rio */
+    margin-bottom: 5px;
+    text-align: center; /* Centralize o conteÃºdo horizontalmente */
+}
+
+
+#cabecalho img {
+    margin-bottom: 30px;
+}
+
+#cabecalho h1 {
+    margin-top: 0px;
+}
+
+p {
+    margin-bottom: 5px;
+    text-align: center; /* Centralize o texto horizontalmente */
+}
+
+#conteudo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+form {
+    border: 1px solid #41281f;
+    width: 500px;
+    padding: 20px;
+}
